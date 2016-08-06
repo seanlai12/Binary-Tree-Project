@@ -1,0 +1,102 @@
+Script started, file is typescript
+nblai@uw1-320-14:~$ g++ lab2.cpp bintree.cpp nodedata.cpp
+nblai@uw1-320-14:~$ valgrind ./a.out
+==11269== Memcheck, a memory error detector
+==11269== Copyright (C) 2002-2011, and GNU GPL'd, by Julian Seward et al.
+==11269== Using Valgrind-3.7.0 and LibVEX; rerun with -h for copyright info
+==11269== Command: ./a.out
+==11269== 
+Initial data:
+  iii not tttt eee r not and jj r eee pp r sssss eee not tttt ooo ff m m y z $$ 
+Tree Inorder:
+and eee ff iii jj m not ooo pp r sssss tttt y z 
+                        z
+                    y
+                tttt
+                        sssss
+                    r
+                        pp
+                            ooo
+            not
+                    m
+                jj
+        iii
+                ff
+            eee
+                and
+Retrieve --> and:  found
+Retrieve --> not:  found
+Retrieve --> sss:  not found
+Depth    --> and:  3
+Depth    --> not:  2
+Depth    --> sss:  0
+T == T2?     equal
+T != first?  equal
+T == dup?    equal
+                    z
+                y
+                    tttt
+            sssss
+                    r
+                pp
+                    ooo
+        not
+                    m
+                jj
+                    iii
+            ff
+                    eee
+                and
+---------------------------------------------------------------
+Initial data:
+  b a c b a c $$ 
+Tree Inorder:
+a b c 
+            c
+        b
+            a
+Retrieve --> and:  not found
+Retrieve --> not:  not found
+Retrieve --> sss:  not found
+Depth    --> and:  0
+Depth    --> not:  0
+Depth    --> sss:  0
+T == T2?     equal
+T != first?  not equal
+T == dup?    not equal
+            c
+        b
+            a
+---------------------------------------------------------------
+Initial data:
+  c b a $$ 
+Tree Inorder:
+a b c 
+        c
+            b
+                a
+Retrieve --> and:  not found
+Retrieve --> not:  not found
+Retrieve --> sss:  not found
+Depth    --> and:  0
+Depth    --> not:  0
+Depth    --> sss:  0
+T == T2?     equal
+T != first?  not equal
+T == dup?    not equal
+            c
+        b
+            a
+---------------------------------------------------------------
+Initial data:
+   
+==11269== 
+==11269== HEAP SUMMARY:
+==11269==     in use at exit: 0 bytes in 0 blocks
+==11269==   total heap usage: 273 allocs, 273 frees, 13,801 bytes allocated
+==11269== 
+==11269== All heap blocks were freed -- no leaks are possible
+==11269== 
+==11269== For counts of detected and suppressed errors, rerun with: -v
+==11269== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
+nblai@uw1-320-14:~$ 
